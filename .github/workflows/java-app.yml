@@ -4,8 +4,9 @@ on:
   push:
     paths:
       - 'java-app/**'
+      - '.github/workflows/java-app.yml'
 jobs:
-  action-environment-debug:
+  building-java-app:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
