@@ -9,19 +9,23 @@ jobs:
     # - uses: actions/setup-node@v4
       #   with:
       #     node-version: '20'
-      - run: npm install --global surge
-      - run: surge --version
-      - run: date >> README.md
-      - run: npm run build
-      - name: Surge deploy
-        run: | 
-          export SURGE_TOKEN=c0f11c24344e5acb2495ff9901c8a791
-          surge ./build/ jumbled-motion.surge.sh
       - name: Test run
         run: | 
           date
           ls -la
           pwd 
-          echo "CIAO---------------------------------"
+          echo "TEST---------------------------------"
           env
-      - run: echo "Fineeeeeeeeeeeeeeeeeeeeeeeeeeee"
+      - run: npm install --global surge
+      - run: surge --version
+      - run: date >> README.md
+      - run: npm install
+        working-directory: ./web-frontend/test/
+      - run: npm run build
+        working-directory: ./web-frontend/test/
+      - name: Surge deploy
+        working-directory: ./web-frontend/test/
+        run: | 
+          export SURGE_TOKEN=c0f11c24344e5acb2495ff9901c8a791
+          surge ./build/ jumbled-motion.surge.sh
+      - run: echo "Fine"
