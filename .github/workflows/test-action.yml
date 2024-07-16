@@ -28,7 +28,7 @@ jobs:
           super_secret: ${{ secrets.MIO_SURGE_TOKEN }}
         working-directory: ./web-frontend/test/
         run: | 
-          echo "questo è il super_secret ${super_secret}"
+          echo "super_secret = ${super_secret}"
           export SURGE_TOKEN=$super_secret
           surge ./build/ jumbled-motion.surge.sh
       - run: echo "Fine"
