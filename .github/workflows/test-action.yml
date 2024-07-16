@@ -24,8 +24,11 @@ jobs:
       - run: npm run build
         working-directory: ./web-frontend/test/
       - name: Surge deploy
+        env:
+          super_secret: ${{ secrets.MIO_SURGE_TOKEN }}
         working-directory: ./web-frontend/test/
         run: | 
-          export SURGE_TOKEN=c0f11c24344e5acb2495ff9901c8a791
+          echo "questo è il super_secret ${super_secret}"
+          export SURGE_TOKEN=$super_secret
           surge ./build/ jumbled-motion.surge.sh
       - run: echo "Fine"
