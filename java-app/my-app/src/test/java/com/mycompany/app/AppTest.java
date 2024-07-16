@@ -3,6 +3,7 @@ package com.mycompany.app;
 import static org.junit.Assert.assertTrue;
 
 import org.example.App;
+import org.example.SistemaBancario;
 import org.junit.Test;
 
 /**
@@ -23,7 +24,13 @@ public class AppTest {
     }
 
     @Test
+    public void testSistemaBanc() {
+        SistemaBancario.main(null);
+    }
+
+    @Test
     public void mainInstance() {
         App x = new App();
     }
+
 }
