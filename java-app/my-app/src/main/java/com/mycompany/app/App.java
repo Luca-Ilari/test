@@ -7,6 +7,14 @@ package com.mycompany.app;
 public class App {
     public static void main(String[] args) {
         int x = 0;
-        System.out.println("WAWAWAWAWAWAWA");
+        if (x == 0) {
+            if (x == 0)
+                if (x == 0)
+                    if (x == 0)
+                        if (x == 0) {
+                            System.out.println("WAWAWAWAWAWAWA");
+                        }
+        }
+        System.out.println("FINE");
     }
 }
