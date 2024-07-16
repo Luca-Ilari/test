@@ -17,5 +17,13 @@ jobs:
           pwd 
           echo "TEST---------------------------------"
           env
+      - name: Set up JDK for x64
+        # https://github.com/actions/setup-java
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21.0.2'
+          distribution: 'temurin'
+          architecture: x64
       - run: mvn -version 
       - run: java -version
+      
