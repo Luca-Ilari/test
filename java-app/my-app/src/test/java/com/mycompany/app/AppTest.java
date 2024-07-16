@@ -2,6 +2,7 @@ package com.mycompany.app;
 
 import static org.junit.Assert.assertTrue;
 
+import org.example.App;
 import org.junit.Test;
 
 /**
